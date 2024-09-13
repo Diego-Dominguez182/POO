@@ -1,48 +1,39 @@
+package model;
 import java.util.Date;
 
-public class CitaMaestro implements IAgendable{
+public class CitaSecretaria implements IAgendable{
     private int id;
-    private Maestro maestro;
+    private Secretaria secretaria;
     private Usuario usuario;
     private Date fecha;
     private String hora;
-
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
-    public Maestro getMaestro() {
-        return maestro;
+    public Secretaria getSecretaria() {
+        return secretaria;
     }
-
-    public void setMaestro(Maestro maestro) {
-        this.maestro = maestro;
+    public void setSecretaria(Secretaria secretaria) {
+        this.secretaria = secretaria;
     }
-
     public Usuario getUsuario() {
         return usuario;
     }
-
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-
     public Date getFecha() {
         return fecha;
     }
-
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
-
     public String getHora() {
         return hora;
     }
-
     public void setHora(String hora) {
         this.hora = hora;
     }
@@ -53,5 +44,5 @@ public class CitaMaestro implements IAgendable{
         this.hora = hora;
     }
 
-    
 }
+

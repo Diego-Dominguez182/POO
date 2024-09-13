@@ -1,8 +1,10 @@
+package model;
+
 public class Estudiante extends Usuario{
     private String matricula;
     private String semestre;
 
-    Estudiante(String nombre, String matricula, String correo) {
+    public Estudiante(String nombre, String matricula, String correo) {
         super(nombre, correo);
         this.matricula = matricula;
     }

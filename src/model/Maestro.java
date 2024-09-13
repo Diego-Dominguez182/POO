@@ -1,3 +1,4 @@
+package model;
 import java.util.Date;
 import java.util.ArrayList;
 
@@ -5,7 +6,7 @@ public class Maestro extends Usuario{
     private int numPersonal ;
     private String especialidad;
 
-    Maestro(String nombre, int numPersonal, String correo) {
+    public Maestro(String nombre, int numPersonal, String correo) {
         super(nombre, correo);
         this.numPersonal = numPersonal;
     }
@@ -37,47 +38,11 @@ public class Maestro extends Usuario{
         return tutoriasDisponibles;
     }
 
-    public static class TutoriasDisponibles {
-        private int id;
-        private Date fecha;
-        private String hora;
-        
-        TutoriasDisponibles(Date fecha, String hora) {
-            this.fecha = fecha;
-            this.hora = hora;
+    public static class TutoriasDisponibles extends CitaTutoria{
+        public TutoriasDisponibles(Date fecha, String hora) {
+            super(fecha, hora);
         }
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public Date getFecha() {
-            return fecha;
-        }
-
-        public void setFecha(Date fecha) {
-            this.fecha = fecha;
-        }
-
-        public String getHora() {
-            return hora;
-        }
-
-        public void setHora(String hora) {
-            this.hora = hora;
-        }
-
-        @Override
-        public String toString() {
-            return "\n TutoriasDisponibles{" +
-                    "fecha = " + fecha +
-                    ", hora = '" + hora  +
-                    '}';
-        }
+    
     }
 
     @Override
