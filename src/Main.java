@@ -4,20 +4,13 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        mostrarMenu();
 
-        Maestro maestro = new Maestro("Morales", 1234);
+        Maestro maestro = new Maestro("Morales", 1234, "diegodgz.182@gmail.com");
         //
-        maestro.addCursoDisponible(new Date(), "12:00");
-        maestro.addCursoDisponible(new Date(), "19:00");
-        maestro.addCursoDisponible(new Date(), "14:00");
-        System.out.println("Cursos disponibles:");
-        for (Maestro.TutoriasDisponibles tutoria : maestro.getTutoriasDisponibles()) {
-            System.out.println(tutoria.getHora() + " " + tutoria.getFecha());
-        }
 
-       
-        ClaseExterna ce = new ClaseExterna();
-        ce.metodoExterno();
+        Usuario usuario = new Maestro("", 0, "dasd.com");
+        Usuario usuario2 = new Secretaria("null", "", "");
+        usuario.despedir("null");
+        usuario.saludar("null");
 }
 }

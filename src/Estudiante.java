@@ -23,6 +23,12 @@ public class Estudiante extends Usuario{
         this.semestre = semestre;
     }
 
-    
-    
+    @Override
+    public void saludar(String nombre) {
+        System.out.println("Hola " + nombre + " soy " + getNombre() + " en que puedo ayudarte?");
+    }
+    @Override
+    public String toString() {
+        return "Estudiante{" + matricula;
+    }
 }
