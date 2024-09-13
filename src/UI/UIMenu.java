@@ -29,7 +29,7 @@ public class UIMenu {
     
 
             Scanner scan = new Scanner(System.in);
-            // respuesta = scan.nextInt();
+
             respuesta = Integer.parseInt(scan.nextLine());
             System.out.println(respuesta);
             
