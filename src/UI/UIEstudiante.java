@@ -1,4 +1,6 @@
 package UI;
+import static UI.UIMaestro.maestroConTutorias;
+
 import java.util.Scanner;
 
 import model.Maestro;
@@ -38,17 +40,21 @@ public class UIEstudiante {
         System.out.println("..:: Mis tutorías ::..");
     }
 
-    private static void agendarTutoria(){
+    public static void agendarTutoria(){
         System.out.println("..:: Agendar tutoría ::..");
 
-        for (Maestro maestro : UI.UIMenu.maestros){
-            if (maestro.getTutoriasDisponibles().size() > 0){
-                System.out.println("Maestro: " + maestro.getNombre());
-                for (Maestro.TutoriasDisponibles tutoria : maestro.getTutoriasDisponibles()){
-                    System.out.println("Fecha: " + tutoria.getFecha() + " Hora: " + tutoria.getHora());
-                }
-            }
-            
+
+        int i = 1;
+        for (Maestro maestro : UIMaestro.maestroConTutorias) {
+            System.out.println(i +" " + maestro.getNombre());
+            i++;            
+        }
+        System.out.println("Selecciona maestro");
+        Scanner scan = new Scanner(System.in);
+        int maestroSeleccionado = scan.nextInt();
+
+        System.out.println("Selecciona una tutoría");
+        maestroConTutorias.get(maestroSeleccionado - 1).getTutoriasDisponibles();
         }
         // 1.- Maestro
         //   1.- Tutoría 1
@@ -57,5 +63,5 @@ public class UIEstudiante {
         // 3.- Maestro 3
         // 0.- Cancelar 
     }
-}
+
 
