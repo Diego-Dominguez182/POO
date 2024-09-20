@@ -16,8 +16,9 @@ public class Main {
         Maestro maestro2 = new Maestro("Magdiel mercado", 1112, "mamercado.uv");
         Maestro maestro3 = new Maestro("Mag", 1113, "Mag.com");
         maestro1.addCursoDisponible("12/12/2021", "12:00");
-        maestro2.addCursoDisponible("12/12/2021", "12:00");
-        maestro3.addCursoDisponible("12/12/2021", "12:00");
+        maestro2.addCursoDisponible("25/02/2021", "12:00");
+        maestro2.addCursoDisponible("06/03/2021", "12:00");
+        maestro2.addCursoDisponible("05/04/2021", "12:00");
 
         maestros.add(maestro1);
         maestros.add(maestro2);

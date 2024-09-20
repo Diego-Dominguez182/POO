@@ -1,5 +1,6 @@
 package UI;
 import static UI.UIMaestro.maestroConTutorias;
+import static UI.UIMenu.estudianteLogeado;
 
 import java.util.Scanner;
 
@@ -42,26 +43,56 @@ public class UIEstudiante {
 
     public static void agendarTutoria(){
         System.out.println("..:: Agendar tutoría ::..");
+        int respuestaConfirmacion = 0;
 
-
+        do{
+            System.out.println("Selecciona maestro");
         int i = 1;
         for (Maestro maestro : UIMaestro.maestroConTutorias) {
             System.out.println(i +" " + maestro.getNombre());
             i++;            
         }
-        System.out.println("Selecciona maestro");
         Scanner scan = new Scanner(System.in);
-        int maestroSeleccionado = scan.nextInt();
+        int respuestaMaestro = scan.nextInt();
+
+        Maestro maestroSeleccionado = UIMaestro.maestroConTutorias.get(respuestaMaestro - 1);
 
         System.out.println("Selecciona una tutoría");
-        maestroConTutorias.get(maestroSeleccionado - 1).getTutoriasDisponibles();
+        i = 1;
+        for (Maestro.TutoriasDisponibles td : UIMaestro.maestroConTutorias.
+            get(respuestaMaestro - 1).getTutoriasDisponibles()) {
+                System.out.println(i + " " + td.getFechaDate() + " " + td.getHora());
+                i++;
         }
+        int tutoriaSeleccionada = scan.nextInt();
+
+        do {
+            System.out.println("Maestro: " + maestroSeleccionado.getNombre() + ", Tutoría: "
+            + maestroSeleccionado.getTutoriasDisponibles().get(tutoriaSeleccionada - 1));
+            System.out.println("1.- Para continuar \n2.- Cambiar tutoría");
+            respuestaConfirmacion = scan.nextInt();
+
+        } while (tutoriaSeleccionada < 1 || tutoriaSeleccionada > 2);
+        if  (respuestaConfirmacion == 1){
+            Maestro.TutoriasDisponibles tutoria = maestroSeleccionado.
+            getTutoriasDisponibles().get(tutoriaSeleccionada - 1);
+            UIMenu.estudianteLogeado.addTutoriaMaestro(maestroSeleccionado, tutoria.getFecha(), tutoria.getHora());
+        } else {
+            System.out.println("bye");
+        }
+           
+        } while (respuestaConfirmacion != 1);
+
+
         // 1.- Maestro
         //   1.- Tutoría 1
         //   2.- Tutoría 2
         // 2.- Maestro 2
         // 3.- Maestro 3
         // 0.- Cancelar 
+    
+    
     }
+}
 
 

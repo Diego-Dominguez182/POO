@@ -1,8 +1,11 @@
 package model;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class Estudiante extends Usuario{
     private String matricula;
     private String semestre;
+    ArrayList<CitaMaestro> tutoriasAgendadas = new ArrayList<>();
 
     public Estudiante(String nombre, String matricula, String correo) {
         super(nombre, correo);
@@ -25,10 +28,10 @@ public class Estudiante extends Usuario{
         this.semestre = semestre;
     }
 
-    @Override
-    public void saludar(String nombre) {
-        System.out.println("Hola " + nombre + " soy " + getNombre() + " en que puedo ayudarte?");
+    public void addTutoriaMaestro(Maestro maestro, Date fecha, String hora) {
+        tutoriasAgendadas.add(new CitaMaestro(maestro, this));
     }
+
     @Override
     public String toString() {
         return "Estudiante{" + matricula;

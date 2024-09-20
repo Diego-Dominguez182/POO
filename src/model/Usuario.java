@@ -44,5 +44,4 @@ public abstract class Usuario {
         System.out.println("Adios " + nombre + " espero verte pronto");
     }
     
-    public abstract void saludar(String nombre);
 }

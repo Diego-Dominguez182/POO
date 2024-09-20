@@ -26,11 +26,11 @@ public class CitaTutoria {
         this.id = id;
     }
 
-    public Date getFecha(Date fecha) {
+    public Date getFecha() {
         return fecha;
     }
 
-    public String getFecha() {
+    public String getFechaDate() {
         return formato.format(fecha);
     }
 

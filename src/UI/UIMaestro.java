@@ -91,7 +91,7 @@ public class UIMaestro {
         
         int j = 1;
         for (int i = 0; i < maestroLogeado.getTutoriasDisponibles().size(); i++){
-            System.out.println(j + ".- " + maestroLogeado.getTutoriasDisponibles().get(i).getFecha()
+            System.out.println(j + ".- " + maestroLogeado.getTutoriasDisponibles().get(i).getFechaDate()
              + " " + maestroLogeado.getTutoriasDisponibles().get(i).getHora());
             j++;
         }

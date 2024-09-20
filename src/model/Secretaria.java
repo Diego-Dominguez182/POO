@@ -50,9 +50,5 @@ public class Secretaria extends Usuario{
         return "Secretaria{" + area + ", turno " + turno;	
     }
 
-    @Override
-    public void saludar(String nombre) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saludar'");
-    }
+
 }
