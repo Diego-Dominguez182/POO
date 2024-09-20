@@ -12,8 +12,8 @@ public class UIMaestro {
 
         do {
             System.out.println("Seleccione una opción:");
-            System.out.println("1.- Agregar curso");
-            System.out.println("2.- Ver cursos");
+            System.out.println("1.- Agregar tutoría");
+            System.out.println("2.- Ver tutoría");
             System.out.println("3.- Salir");
     
             Scanner scan = new Scanner(System.in);
@@ -39,15 +39,40 @@ public class UIMaestro {
     }
 
     public static void agregarTutoria(){
-        System.out.println("Agregar tutoría");
-        System.out.println("Ingresa la fecha de la tutoría: [dd/mm/yyyy] ");
-        Scanner scan = new Scanner(System.in);
-        String fecha = scan.nextLine();
-        System.out.println("Ingresa la hora de la tutoría: [00:00] ");
-        String hora = scan.nextLine();
-        
-    }
+    System.out.println("Agregar tutoría");
 
+    boolean banderaExterna = true;
+    do {
+        Scanner sc = new Scanner(System.in);
+            System.out.println("Ingresa la fecha de la tutoría: [dd/mm/yyyy] ");
+            Scanner scan = new Scanner(System.in);
+            String fecha = scan.nextLine();
+            System.out.println("Ingresa la hora de la tutoría: [00:00] ");
+            String hora = scan.nextLine();
+
+            boolean banderaInterna = true;
+            
+        do{
+            System.out.println("La tutoría es: " + fecha + " " + hora);
+            System.out.println("1.- Para agregar tutoría \n2.- Cambiar tutoría");
+            int respuesta = sc.nextInt();
+            if (respuesta == 1){
+                System.out.println("Tutoría agregada");
+                banderaExterna = false;
+                banderaInterna = false;
+                maestroLogeado.addCursoDisponible(null, hora);
+                break;
+            }
+            else if (respuesta == 2){
+                banderaInterna = false;
+            }
+            else{
+                System.out.println("Por favor seleccione una opción válida");
+            }
+        } while (banderaInterna);
+    } while (banderaExterna);
+
+    }    
     public static void listarCursos(){
         System.out.println();
     }

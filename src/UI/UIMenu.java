@@ -23,7 +23,6 @@ public class UIMenu {
         do {
             System.out.println("..:: Bienvenido ::..");
             System.out.println("Selecciona una opción:");
-
             System.out.println("1. Maestros");
             System.out.println("2. Estudiantes");
             System.out.println("3. Secretaria");
@@ -90,7 +89,7 @@ public class UIMenu {
             } else {
                 System.out.println("Por favor selecciona una opción válida");
             }
-        } while(true);
+        } while(banderaCorreo);
       
 }
 }

@@ -29,7 +29,7 @@ public class Maestro extends Usuario{
     }
 
     ArrayList<Maestro.TutoriasDisponibles> tutoriasDisponibles = new ArrayList<>();
-    public void addCursoDisponible(Date fecha, String hora) {
+    public void addCursoDisponible(String fecha, String hora) {
         tutoriasDisponibles.add(new TutoriasDisponibles(fecha, hora));
     }
 
@@ -39,7 +39,7 @@ public class Maestro extends Usuario{
     }
 
     public static class TutoriasDisponibles extends CitaTutoria{
-        public TutoriasDisponibles(Date fecha, String hora) {
+        public TutoriasDisponibles(String fecha, String hora) {
             super(fecha, hora);
         }
     
