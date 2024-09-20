@@ -26,7 +26,9 @@ public class Secretaria extends Usuario{
         this.turno = turno;
     }
 
-    ArrayList<TutoriasDisponibles> tutoriasDisponibles = new ArrayList<>();
+    ArrayList<Secretaria.TutoriasDisponibles> tutoriasDisponibles = new ArrayList<>();
+
+
     public void addCursoDisponible(Date fecha, String hora) {
         tutoriasDisponibles.add(new TutoriasDisponibles(fecha, hora));
     }
