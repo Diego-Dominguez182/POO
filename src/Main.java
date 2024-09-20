@@ -20,7 +20,6 @@ public class Main {
         estudiantes.add(new Estudiante("Nava", "S21017242", "Nava.com"));
         estudiantes.add(new Estudiante("Rafa", "S29149219", "Rafa.com"));
     
-
         mostrarMenu();
 
 

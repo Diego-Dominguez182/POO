@@ -2,9 +2,12 @@ package UI;
 
 import static UI.UIMenu.maestroLogeado;
 import static UI.UIMenu.mostrarMenu;
+import java.util.ArrayList;
+import model.Maestro;
 
 import java.util.Scanner;
 public class UIMaestro {
+    public static ArrayList<Maestro> maestroConTutorias = new ArrayList<>();
     public static void maestroMenu(){
         int respuesta;
         System.out.println("..:: Maestro " + maestroLogeado.getNombre() + " ::..");
@@ -70,11 +73,18 @@ public class UIMaestro {
             }
         } while (banderaInterna);
     } while (banderaExterna);
+    
 
-    }    
+    }
+    
+    private static void consultarMaestroConTutorias(Maestro maestro){
+        if (!maestroConTutorias.contains(maestro)){
+            maestroConTutorias.add(maestro);
+        }
+        
+    }
     public static void listarCursos(){
         if (maestroLogeado.getTutoriasDisponibles().isEmpty()){
-            
             System.out.println("No hay tutorías disponibles");
             return;
         } 

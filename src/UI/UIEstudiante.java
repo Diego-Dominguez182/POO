@@ -1,5 +1,7 @@
 package UI;
 import java.util.Scanner;
+
+import model.Maestro;
 public class UIEstudiante {
         public final static String MESES[] = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
     "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
@@ -17,17 +19,13 @@ public class UIEstudiante {
 
             switch (respuesta) {
                 case 1:
-                    System.out.println("..:: Agendar tutoría ::..");
-                    System.out.println("Selecciona el mes deseado:");
-                    for (int i = 0; i < 5; i++) {
-                        System.out.println(i + ". " + MESES[i]);
-                    }
+                    agendarTutoria();
                     break;
                 case 2:
-                    System.out.println("..:: Mis tutorías ::..");
+                    listarMisTutorias();
                     break;
                 case 0:
-                    System.out.println("..:: Cancelar ::..");
+                    System.out.println("..:: Bye ::..");
                     break;
                 default:
                     System.out.println("Por favor selecciona una opción válida");
@@ -36,5 +34,28 @@ public class UIEstudiante {
         } while (respuesta != 0);
     }
 
+    private static void listarMisTutorias() {
+        System.out.println("..:: Mis tutorías ::..");
+    }
+
+    private static void agendarTutoria(){
+        System.out.println("..:: Agendar tutoría ::..");
+
+        for (Maestro maestro : UI.UIMenu.maestros){
+            if (maestro.getTutoriasDisponibles().size() > 0){
+                System.out.println("Maestro: " + maestro.getNombre());
+                for (Maestro.TutoriasDisponibles tutoria : maestro.getTutoriasDisponibles()){
+                    System.out.println("Fecha: " + tutoria.getFecha() + " Hora: " + tutoria.getHora());
+                }
+            }
+            
+        }
+        // 1.- Maestro
+        //   1.- Tutoría 1
+        //   2.- Tutoría 2
+        // 2.- Maestro 2
+        // 3.- Maestro 3
+        // 0.- Cancelar 
+    }
 }
 
