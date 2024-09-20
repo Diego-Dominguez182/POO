@@ -11,8 +11,6 @@ import model.Estudiante;
 
 public class Main {
     public static void main(String[] args) {
-        agregarTutoria();
-        UIMaestro.agregarTutoria();
         maestros.add(new Maestro("Juan", 1111, "Juan.com"));
         maestros.add(new Maestro("Javier pino", 1112, "pino.com"));
         maestros.add(new Maestro("Mag", 1113, "Mag.com"));

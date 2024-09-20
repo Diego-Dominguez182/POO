@@ -57,10 +57,9 @@ public class UIMaestro {
             System.out.println("1.- Para agregar tutoría \n2.- Cambiar tutoría");
             int respuesta = sc.nextInt();
             if (respuesta == 1){
-                System.out.println("Tutoría agregada");
+                maestroLogeado.addCursoDisponible(fecha, hora);
                 banderaExterna = false;
                 banderaInterna = false;
-                maestroLogeado.addCursoDisponible(null, hora);
                 break;
             }
             else if (respuesta == 2){
@@ -74,7 +73,19 @@ public class UIMaestro {
 
     }    
     public static void listarCursos(){
-        System.out.println();
+        if (maestroLogeado.getTutoriasDisponibles().isEmpty()){
+            
+            System.out.println("No hay tutorías disponibles");
+            return;
+        } 
+        
+        int j = 1;
+        for (int i = 0; i < maestroLogeado.getTutoriasDisponibles().size(); i++){
+            System.out.println(j + ".- " + maestroLogeado.getTutoriasDisponibles().get(i).getFecha()
+             + " " + maestroLogeado.getTutoriasDisponibles().get(i).getHora());
+            j++;
+        }
+
     }
 
 }

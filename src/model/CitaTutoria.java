@@ -2,14 +2,19 @@ package model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class CitaTutoria {
     private int id;
-    private String fecha;
+    private Date fecha;
     private String hora;
     SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
     
     public CitaTutoria(String fecha, String hora) {
-        this.fecha = formato.format(new Date());
+        try {
+            this.fecha = formato.parse(fecha);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         this.hora = hora;
     }
 
@@ -21,11 +26,15 @@ public class CitaTutoria {
         this.id = id;
     }
 
-    public String getFecha() {
+    public Date getFecha(Date fecha) {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public String getFecha() {
+        return formato.format(fecha);
+    }
+
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
