@@ -1,5 +1,4 @@
 import static UI.UIMenu.*;
-import UI.UIEstudiante;
 import UI.UIMaestro;
 import model.Maestro;
 import model.Estudiante;

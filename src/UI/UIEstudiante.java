@@ -1,7 +1,4 @@
 package UI;
-import static UI.UIMaestro.maestroConTutorias;
-import static UI.UIMenu.estudianteLogeado;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
