@@ -2,8 +2,10 @@ package UI;
 import static UI.UIMaestro.maestroConTutorias;
 import static UI.UIMenu.estudianteLogeado;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import model.CitaMaestro;
 import model.Maestro;
 public class UIEstudiante {
         public final static String MESES[] = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
@@ -37,9 +39,6 @@ public class UIEstudiante {
         } while (respuesta != 0);
     }
 
-    private static void listarMisTutorias() {
-        System.out.println("..:: Mis tutorías ::..");
-    }
 
     public static void agendarTutoria(){
         System.out.println("..:: Agendar tutoría ::..");
@@ -93,6 +92,22 @@ public class UIEstudiante {
     
     
     }
-}
 
+
+    
+    private static void listarMisTutorias(){
+        System.out.println("..:: Mis tutorías ::..");
+
+        ArrayList<CitaMaestro> misTutorias = UIMenu.estudianteLogeado.listarMisTutorias();
+        if (misTutorias.isEmpty()){
+            System.out.println("Sin tutorías");
+        }
+
+        int i = 1;
+        for (CitaMaestro citaMaestro : misTutorias) {
+            System.out.println(i + ".- " + citaMaestro);
+            i++;
+        }
+}
+}
 

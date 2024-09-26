@@ -1,6 +1,5 @@
 package model;
 import java.util.ArrayList;
-import java.util.Date;
 public class Secretaria extends Usuario{
     private String area;
     private String turno;

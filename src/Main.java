@@ -1,13 +1,7 @@
-import static UI.UIMaestro.agregarTutoria;
 import static UI.UIMenu.*;
-
-import java.util.Date;
-
 import UI.UIEstudiante;
 import UI.UIMaestro;
 import model.Maestro;
-import model.Secretaria;
-import model.Usuario;
 import model.Estudiante;
 
 public class Main {
@@ -33,7 +27,7 @@ public class Main {
         estudiantes.add(new Estudiante("Nava", "S21017242", "Nava.com"));
         estudiantes.add(new Estudiante("Rafa", "S29149219", "Rafa.com"));
     
-        UIEstudiante.agendarTutoria();
+        UI.UIMenu.mostrarMenu();
 
 
     }
